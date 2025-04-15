@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trail Trek Challenge</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to bottom, #87ceeb, #ffffff);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #2e8b57;
+    }
+
+    .game-area {
+      margin-top: 30px;
+    }
+
+    .buttons button {
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #1f5f3f;
+    }
+
+    .results, .scoreboard {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .results span, .scoreboard span {
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏕️ Trail Trek Challenge 🥾</h1>
+  <p>Choose your outdoor activity. Can you out-trek the computer?</p>
+
+  <div class="game-area">
+    <div class="buttons">
+      <button onclick="playGame('Hike')">🥾 Hike</button>
+      <button onclick="playGame('Camp')">🏕️ Camp</button>
+      <button onclick="playGame('Fish')">🎣 Fish</button>
+    </div>
+
+    <div class="results">
+      <p>You chose: <span id="playerChoice">-</span></p>
+      <p>Computer chose: <span id="computerChoice">-</span></p>
+      <p>Result: <span id="roundResult">-</span></p>
+    </div>
+
+    <div class="scoreboard">
+      <p>Your score: <span id="playerScore">0</span></p>
+      <p>Computer score: <span id="computerScore">0</span></p>
+    </div>
+  </div>
+
+
+
+  <script>
+    const options = ["Hike", "Camp", "Fish"];
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function playGame(playerChoice) {
+      const computerChoice = options[Math.floor(Math.random() * options.length)];
+      let result = "";
+
+      if (playerChoice === computerChoice) {
+        result = "It's a tie!";
+      } else if (
+        (playerChoice === "Hike" && computerChoice === "Fish") ||
+        (playerChoice === "Fish" && computerChoice === "Camp") ||
+        (playerChoice === "Camp" && computerChoice === "Hike")
+      ) {
+        result = "You win this round!";
+        playerScore++;
+      } else {
+        result = "Computer wins this round!";
+        computerScore++;
+      }
+
+      document.getElementById("playerChoice").textContent = playerChoice;
+      document.getElementById("computerChoice").textContent = computerChoice;
+      document.getElementById("roundResult").textContent = result;
+      document.getElementById("playerScore").textContent = playerScore;
+      document.getElementById("computerScore").textContent = computerScore;
+    }
+  </script>
+</body>
+</html>

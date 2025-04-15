@@ -1,0 +1,96 @@
+/* General Page Styling */
+body {
+    background-color: #f9f7f1; /* light desert color */
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+.header {
+    background-color: #b05f22;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+}
+
+/* All Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* YouTube Video */
+iframe {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Tableau Section */
+.tableau-container {
+    margin-top: 40px;
+    background-color: #f0e6d2;
+    padding: 15px;
+    border: 2px solid #c9b99a;
+    border-radius: 10px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #b05f22;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* Image Collage Styling */
+.image-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.image-collage img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.attractions-box {
+    background-color: #fffdf6;
+    border: 2px solid #b05f22;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attractions-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #b05f22;
+    text-align: center;
+}
+
+.attractions-box ol {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.attractions-box ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
